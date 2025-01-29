@@ -5,7 +5,6 @@ namespace warren_analysis_desk
     public class GoogleNewsExtractorService : IGoogleNewsExtractorService
     {
         private static readonly HttpClient client = new HttpClient();
-        
         private readonly IRobotKeysRepository _robotKeysRepository;
         private readonly INewsRepository _newsRepository;
 
@@ -30,7 +29,6 @@ namespace warren_analysis_desk
                         response.EnsureSuccessStatusCode();
 
                         string responseBody = await response.Content.ReadAsStringAsync();
-
                         var htmlDoc = new HtmlDocument();
                         htmlDoc.LoadHtml(responseBody);
 
