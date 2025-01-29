@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\modules",
+    "\\src\\modules\\broker",
+    "\\src\\modules\\broker\\infra",
+    "\\src\\modules\\broker\\infra\\http"
+  ],
+  "SelectedNode": "\\warren-analysis-desk.sln",
+  "PreviewInSolutionExplorer": false
+}

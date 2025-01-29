@@ -1,0 +1,38 @@
+version: '3'
+
+services:
+  ezze_microservice_base:
+    image: ezze_microservice_base
+    build:
+      context: .
+    ports:
+      - "20000:80"
+    networks:
+      - ezze-network
+    depends_on:
+      - "redis_ezze_microservice_base"
+      - sqlserver_container
+  
+  sqlserver_container:
+    image: mcr.microsoft.com/azure-sql-edge
+    environment:
+      MSSQL_SA_PASSWORD: "SqlServer2024!"
+      ACCEPT_EULA: "Y"
+      MSSQL_PID: "Developer"
+    ports:
+      - "1434:1433"
+  mssqltools:
+    image: mcr.microsoft.com/mssql-tools
+    depends_on:
+      - sqlserver_container
+
+  redis_ezze_microservice_base:
+    image: redis:alpine
+    ports:
+      - "16379:6379"
+    networks:
+      - ezze-network
+
+networks: 
+    ezze-network:
+        driver: bridge
