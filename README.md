@@ -32,16 +32,6 @@
     - O sistema deve rotar com NetCore 8.
     - O sistema terá sua base de dados própria em SQL
 
-## Regras de negócio
-    - Deve ser possível consultar o corretor.
-        - Deve ser possível consultar com CNPJ.
-        - Deve ser possível consultar pelo NOME.
-    - Deve ser possível consultar o segurado.
-        - Deve ser possível consultar com CPF.
-        - O CPF deve ser único.
-    - Deve ser possível iniciar um protocolo.
-    - Deve ser possível listar os protocolos.
-
 # Instalação do Microserviço Local
 
 ### Certifique-se de ter instalado
@@ -55,7 +45,7 @@
 Abra seu terminal e clone este projeto
 
 ```shell
-git clone https://github.com/ubicuadevbrasil/warren-analysis-desk.git
+git clone https://github.com/rodrigo-warren/warren-analysis-desk.git
 ```
 
 Inicie a imagem do SQL Server no docker 
