@@ -2,7 +2,6 @@
 
 ## API
 
-
 <img src="https://w7.pngwing.com/pngs/240/85/png-transparent-c.png" height="40" />
 
 **C#** é uma linguagem de programação, multiparadigma, de tipagem forte, desenvolvida pela Microsoft como parte da plataforma .NET
@@ -51,17 +50,20 @@ git clone https://github.com/rodrigo-warren/warren-analysis-desk.git
 Inicie a imagem do SQL Server no docker 
 
 ```shell
-docker pull mcr.microsoft.com/mssql/server
+docker pull mysql
 ```
 
 Feito isso inicie o container 
 
 ```shell
-docker run --name <NOME_CONTAINER> -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=<SENHA_BANCO>" -p 1433:1433 -d mcr.microsoft.com/mssql/server
+docker run --name <NOME_CONTAINER> -e MYSQL_ROOT_PASSWORD=<SENHA_BANCO> -p 3306:3306 -d mysql
 ```
-- String para conexão: **Server=localhost,1433;Database=db_ezze_homologacao;User ID=sa;Password=<SENHA_BANCO>**
 
 Depois de rodar os comandos para construção do banco, inicie a construção, para isso acesse a raiz do projeto e execute no terminal
+
+```
+dotnet tool install --global dotnet-ef
+```
 
 ```shell
 dotnet ef database update
