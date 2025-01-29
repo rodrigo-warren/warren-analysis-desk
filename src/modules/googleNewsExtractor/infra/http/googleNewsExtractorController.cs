@@ -1,8 +1,9 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace warren_analysis_desk
 {
-    // [Authorize]
+    [Authorize]
     [ApiController]
     [Tags("Google News Extractor")]
     [Route("api/google-news-extractor")]

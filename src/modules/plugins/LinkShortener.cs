@@ -6,11 +6,11 @@ public class LinkShortener
     {
         try
         {
-            string tinyUrlRequest = $"https://tinyurl.com/api-create.php?url={url}";
-            HttpResponseMessage response = await client.GetAsync(tinyUrlRequest);
-            response.EnsureSuccessStatusCode();
-            string shortenedUrl = await response.Content.ReadAsStringAsync();
-            return shortenedUrl;
+            HttpResponseMessage response = await client
+                .GetAsync($"https://tinyurl.com/api-create.php?url={url}");
+
+            return await response.EnsureSuccessStatusCode()
+                .Content.ReadAsStringAsync();
         }
         catch (Exception ex)
         {
